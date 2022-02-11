@@ -271,9 +271,7 @@
         });
         bounds_group.addLayer(layer_CIRCUITOS2021carteleria_5);
         map.addLayer(layer_CIRCUITOS2021carteleria_5);
-        function pop_CARTELERIA2021_6(feature, layer) {
-		//LINEAS DE POPUP SACADAS
-		                  /*  <tr>\
+        function pop_CARTELERIA2021_6(feature, layer) {		                  /*  <tr>\
                         <th scope="row">fid</th>\
                         <td>' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -466,7 +464,6 @@
         bounds_group.addLayer(layer_CARTELERIA2021_6);
         map.addLayer(layer_CARTELERIA2021_6);
         function pop_CARTELERIA20192020_7(feature, layer) {    
-		//LINEAS SACADAS DE POPUP
                       /*<tr>\
                         <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
                     </tr>\
@@ -846,7 +843,6 @@
           }
           })
         }
-		//movido aquí para poner arriba título filtros
 		            var lab_CIRCUITODEPUBLICIDAD = document.createElement('div');
 					
             lab_CIRCUITODEPUBLICIDAD.innerHTML  = '</p> <strong>CIRCUITO DE PUBLICIDAD: <span id="val_CIRCUITODEPUBLICIDAD"></span></strong>';
@@ -859,10 +855,6 @@
             div_CIRCUITODEPUBLICIDAD.id = "div_CIRCUITODEPUBLICIDAD";
             div_CIRCUITODEPUBLICIDAD.className = "slider";
             document.getElementById("menu").appendChild(div_CIRCUITODEPUBLICIDAD);
-            //var lab_CIRCUITODEPUBLICIDAD = document.createElement('div');
-            //lab_CIRCUITODEPUBLICIDAD.innerHTML  = 'CIRCUITO DE PUBLICIDAD: <span id="val_CIRCUITODEPUBLICIDAD"></span>';
-            //lab_CIRCUITODEPUBLICIDAD.className = 'filterlabel';
-            //document.getElementById("menu").appendChild(lab_CIRCUITODEPUBLICIDAD);
             var reset_CIRCUITODEPUBLICIDAD = document.createElement('div');
             reset_CIRCUITODEPUBLICIDAD.innerHTML = 'Limpiar Filtro';
             reset_CIRCUITODEPUBLICIDAD.className = 'filterlabel';
@@ -901,15 +893,14 @@
             document.getElementById("menu").appendChild(div_TIPODECARTEL);
             sel_TIPODECARTEL = document.createElement('select');
             sel_TIPODECARTEL.multiple = true;
-            sel_TIPODECARTEL.size = 7;//Cantidad de lineas visibles en el cuadro de filtrado
+            sel_TIPODECARTEL.size = 7;
             sel_TIPODECARTEL.id = "sel_TIPODECARTEL";
-			//movido aquí para poner arriba título filtros
 			var lab_TIPODECARTEL = document.createElement('div');
             lab_TIPODECARTEL.innerHTML = '<strong>TIPO DE CARTEL</strong></p>';
             lab_TIPODECARTEL.className = 'filterlabel';
             div_TIPODECARTEL.appendChild(lab_TIPODECARTEL);
 
-            var TIPODECARTEL_options_str = //"<option value='' unselected></option>"; (elimina la posibilidad de seleción "de nada")
+            var TIPODECARTEL_options_str = 
             sel_TIPODECARTEL.onchange = function(){filterFunc()};
             TIPODECARTEL_options_str  += '<option value="CARA PANTALLA MUNICIPAL">CARA PANTALLA MUNICIPAL</option>';
             TIPODECARTEL_options_str  += '<option value="CARTEL">CARTEL</option>';
@@ -920,17 +911,13 @@
             TIPODECARTEL_options_str  += '<option value="VALLA O SEXTUPLE">VALLA O SEXTUPLE</option>';
             sel_TIPODECARTEL.innerHTML = TIPODECARTEL_options_str;
             div_TIPODECARTEL.appendChild(sel_TIPODECARTEL);
-            //var lab_TIPODECARTEL = document.createElement('div');
-            //lab_TIPODECARTEL.innerHTML = 'TIPO DE CARTEL';
-            //lab_TIPODECARTEL.className = 'filterlabel';
-            //div_TIPODECARTEL.appendChild(lab_TIPODECARTEL);
             var reset_TIPODECARTEL = document.createElement('div');
             reset_TIPODECARTEL.innerHTML = 'Limpiar Filtro';
             reset_TIPODECARTEL.className = 'filterlabel';
             reset_TIPODECARTEL.onclick = function() {
                 var options = document.getElementById("sel_TIPODECARTEL").options;
                 for (var i=0; i < options.length; i++) {
-                    options[i].selected = true;//gris al estar libre de seleccion
+                    options[i].selected = true;
                 }
                 filterFunc();
             };
@@ -943,7 +930,7 @@
             document.getElementById("menu").appendChild(div_EMPRESA);
             sel_EMPRESA = document.createElement('select');
             sel_EMPRESA.multiple = true;
-            sel_EMPRESA.size = 14;//Cantidad de lineas visibles en el cuadro de filtrado
+            sel_EMPRESA.size = 14;
             sel_EMPRESA.id = "sel_EMPRESA";
 			var lab_EMPRESA = document.createElement('div');
             lab_EMPRESA.innerHTML = '<strong>EMPRESAS DE CARTELES PUBLICITARIOS</strong>';
@@ -951,7 +938,7 @@
             div_EMPRESA.appendChild(lab_EMPRESA);
 			
 			
-            var EMPRESA_options_str = //"<option value='' unselected></option>";
+            var EMPRESA_options_str =
             sel_EMPRESA.onchange = function(){filterFunc()};
             EMPRESA_options_str  += '<option value="AMANECER">AMANECER</option>';
             EMPRESA_options_str  += '<option value="BIG MEDIA">BIG MEDIA</option>';
@@ -992,10 +979,6 @@
             EMPRESA_options_str  += '<option value="VP INVERSORA">VP INVERSORA</option>';
             sel_EMPRESA.innerHTML = EMPRESA_options_str;
             div_EMPRESA.appendChild(sel_EMPRESA);
-            //var lab_EMPRESA = document.createElement('div');
-            //lab_EMPRESA.innerHTML = 'EMPRESA';
-            //lab_EMPRESA.className = 'filterlabel';
-            //div_EMPRESA.appendChild(lab_EMPRESA);
             var reset_EMPRESA = document.createElement('div');
             reset_EMPRESA.innerHTML = 'Limpiar Filtro';
             reset_EMPRESA.className = 'filterlabel';
